@@ -1,6 +1,8 @@
-const state = {
-  name: "Mars",
-  age: 14
+
+export interface State {
+    username: string
+}
+export const state: State = {
+  username:  "",
 };
 
-export default state;
