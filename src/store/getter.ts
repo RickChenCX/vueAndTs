@@ -1,3 +1,3 @@
 export const name = (state: any) => {
-  return state.name;
+  return state.NavIndex;
 };

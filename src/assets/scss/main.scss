@@ -1,0 +1,30 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+a{
+    text-decoration: none;
+    color: #000000;
+    &:hover{
+        color: #4F4F4F;
+    }
+}
+ul{
+    list-style: none;
+}
+a, img, li{
+    cursor: pointer;
+}
+@font-face{
+    font-family: "fontawesome";
+    src:url("/src/assets/fonts/fontawesome-webfont.eot"),
+    url("/src/assets/fonts/fontawesome-webfont.svg"),
+    url("/src/assets/fonts/fontawesome-webfont.ttf"),
+    url("/src/assets/fonts/fontawesome-webfont.woff"),
+    url("/src/assets/fonts/fontawesome-webfont.woff2")
+}

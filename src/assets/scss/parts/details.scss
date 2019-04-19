@@ -1,0 +1,32 @@
+.md {
+    text-align: left;
+    width: 900px;
+    margin: 0 auto;
+    padding:  30px;
+    background-color: #f0ffff;
+    strong{
+        padding: 10px 0;
+        display: inline-block;
+        font-size: 18px;
+    }
+    em{
+        font-size: 15px;
+    }
+    ul {
+        list-style-type: disc;
+        margin-left: 20px;
+    }
+    pre{
+        background-color: aliceblue;
+        padding: 20px;
+        overflow: auto;
+        margin: 20px 0 ;
+        display: inline-block;
+        width: 90%;
+    }
+    a{
+        text-decoration:underline ;
+    }
+}
+
+
