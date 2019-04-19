@@ -32,6 +32,7 @@ export default class Nav extends Vue {
     }
     
 
+
 }
 </script>
 
@@ -57,4 +58,5 @@ export default class Nav extends Vue {
     .active{
         background-color: #f0f8ff;
     }
+
 </style>

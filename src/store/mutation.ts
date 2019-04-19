@@ -1,10 +1,12 @@
 import * as types from "./mutation-type";
+import { MutationTree } from 'vuex'
+import {State} from "./states";
 
-export default {
-  [types.SET_NAME](state: any, name: any) {
-    state.name = name;
+const mutations: MutationTree<any> = {
+  [types.SET_NAME](state, payload) {
+    state.username = payload;
+    console.log(state)
+
   },
-  [types.SET_AGE](state: any, age: any) {
-    state.age = age;
-  }
-};
+}
+export default mutations

@@ -1,4 +1,4 @@
-interface State {
+export interface State {
   NavIndex?: number
 }
 const state: State = {

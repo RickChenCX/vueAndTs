@@ -11,6 +11,7 @@ Vue.config.productionTip = false;
 // 挂载axios，以前绑定在prototype上的方法不行了
 Vue.use(vueAxios, axios);
 
+
 new Vue({
   router,
   store,

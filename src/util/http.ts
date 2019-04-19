@@ -1,7 +1,8 @@
-import axios, {AxiosResponse} from "axios";
+
+import axios from "axios";
 import { config } from '@vue/test-utils';
 
-let instance = axios.create({
+export let instance = axios.create({
     baseURL: 'http://localhost:3000/',
     timeout: 5000,
   });
@@ -30,16 +31,17 @@ instance.interceptors.response.use( (response) => {
  * @param params
  * @returns (Promise)
  */
-export function fetch(url: string, params: any) {
-  return new Promise((resolve, reject) => {
-    instance.get(url, {
-          params
-      }).then( (res: AxiosResponse<any>) => {
-          resolve( res.data );
-      }).catch( error => {
-          reject(error);
-      })
-  })
+
+export function fetch(url: string, params: object) {
+    return new Promise((resolve, reject) => {
+      instance.get(url, {
+            params
+        }).then( res => {
+            resolve( res.data );
+        }).catch( error => {
+            reject(error);
+        })
+    })
 }
 
 /**
@@ -48,12 +50,13 @@ export function fetch(url: string, params: any) {
  * @param data
  * @returns (Promise)
  */
-export  function post(url: string, data: any) {
-  return new Promise((resolve, reject) => {
-    instance.post(url, data).then( (res: AxiosResponse<any>) => {
-          resolve(res.data);
-      }).catch(error => {
-          reject(error);
-      })
-  })
+
+export  function post(url: string, data: object) {
+    return new Promise((resolve, reject) => {
+      instance.post(url, data).then( res => {
+            resolve(res.data);
+        }).catch(error => {
+            reject(error);
+        })
+    })
 }
