@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex, { Commit, Dispatch } from 'vuex'
-import {state} from "./states";
+import state from "./states";
 import getters from "./getter";
 import mutations from "./mutation";
 import actions from "./action";

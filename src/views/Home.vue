@@ -65,29 +65,10 @@ export default class Home extends Vue {
 }
 </script>
 
-<<<<<<< HEAD
 <style lang="scss" >
   @import "~@/assets/scss/parts/details.scss";
   @import "~@/assets/scss/parts/index.scss";
 
-=======
-<style lang="scss" scoped>
-  .home{
-    position: relative;
-    height: 100%;
-  }
-  .cover-floor{
-    height: 100%;
-    top: 0;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 8;
-  }
->>>>>>> c55075047186a73293efc4261bce56bed21726b2
+
 </style>
 
