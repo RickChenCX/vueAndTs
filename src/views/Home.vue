@@ -15,7 +15,7 @@
               <FileList />
         </div>
         <div class="right">
-
+          <tagBox />
         </div>
     </div>
 
@@ -28,7 +28,7 @@ import HelloWorld from "@/components/HelloWorld.vue"; // @ is an alias to /src
 import Nav from "@/components/Nav.vue";
 import PersonInfo from "@/components/personInfo.vue";
 import FileList from "@/components/fileList.vue";
-
+import tagBox from "@/components/tagBox.vue"
 import {
   State,
   Getter,
@@ -42,8 +42,8 @@ import {
     HelloWorld,
     Nav,
     PersonInfo,
-    FileList
-
+    FileList,
+    tagBox
   },
   
 })
