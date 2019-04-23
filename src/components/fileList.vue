@@ -1,38 +1,54 @@
 <template>
     <div class="fileItem">
-        <ul>
-            <li v-for="(item, key) in fileList" :key="key" :dataId="item._id" v-on:click="getLink($event)">
+        <ul v-if="fileList.length != 0">
+            <li  v-for="(item, key) in fileList" :key="key" :dataId="item._id" v-on:click="getLink($event)">
                 <h4>{{item.title}}</h4>
                 <p>{{item.subtitle}}</p>
             </li>
+        </ul>
+        <ul v-else style="text-align:center">
+            为查询到数据
         </ul>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue, } from "vue-property-decorator";
+import { Component, Prop, Vue, Watch} from "vue-property-decorator";
 import { fetch, post } from "@/util/http";
 import { File} from "@/config"
 
 
 @Component
 export default class FileList extends Vue {
-    fileList: File[]
+    @Prop() tag!: string;
+   
+    fileList: File[];
+
     constructor() {
         super();
         this.fileList = [];
+        console.log(this.tag)
     }
+    @Watch('tag')
+    onChildChanged(val: string, oldVal: string) { 
+        this.getFileInfo(val)
+    };
     public created() {
-       this.getFileInfo()
+       this.getFileInfo(this.tag)
     }
     public getLink(event: any) {
         let el = event.currentTarget; 
         let dataId = el.getAttribute("dataid")
-        console.log(dataId);
         this.$router.push({name: 'about', params: {fileId: dataId}});    
     }
-    getFileInfo() {
-        fetch("/controller/selectFile", {}).then( (data: any) => {
+    getFileInfo(msg: string) {
+        let filter =  {};
+        if (msg != "") {
+            filter = {
+                language: msg
+            }
+        }
+        fetch("/controller/selectFile", filter).then( (data: any) => {
             console.log(data);
             this.fileList = data;
         })

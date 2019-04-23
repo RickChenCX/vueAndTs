@@ -12,10 +12,10 @@
         </div>
         <div class="center">
               <Nav />
-              <FileList />
+              <FileList :tag="tag" />
         </div>
         <div class="right">
-          <tagBox />
+          <tagBox @tagSelect="testFnc" />
         </div>
     </div>
 
@@ -50,16 +50,21 @@ import {
 
 export default class Home extends Vue {
   coverFloor: boolean;
+  tag: string;
   constructor() {
     super();
     this.coverFloor = false;
+    this.tag = ""
   }
   Cover() {
      this.coverFloor = !this.coverFloor;
   }
   testCover() {
       this.coverFloor = !this.coverFloor;
-
+  }
+  testFnc(msg: string) {
+    console.log(msg);
+    this.tag = msg;
   }
   
 }

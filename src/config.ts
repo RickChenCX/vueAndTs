@@ -6,3 +6,7 @@ export interface File {
     createTime: Date,
     content: string,
 }
+export interface Tag {
+    name: string,
+    _id: string,
+}

@@ -1,5 +1,5 @@
 
-import axios from "axios";
+import axios, {AxiosResponse} from "axios";
 import { config } from '@vue/test-utils';
 
 export let instance = axios.create({
@@ -36,7 +36,7 @@ export function fetch(url: string, params: object) {
     return new Promise((resolve, reject) => {
       instance.get(url, {
             params
-        }).then( res => {
+        }).then( (res: AxiosResponse<any>) => {
             resolve( res.data );
         }).catch( error => {
             reject(error);
@@ -53,7 +53,7 @@ export function fetch(url: string, params: object) {
 
 export  function post(url: string, data: object) {
     return new Promise((resolve, reject) => {
-      instance.post(url, data).then( res => {
+      instance.post(url, data).then( (res: AxiosResponse<any>) => {
             resolve(res.data);
         }).catch(error => {
             reject(error);
